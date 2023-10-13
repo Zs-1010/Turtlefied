@@ -66,6 +66,7 @@ Turtlefied consists of:
   * Jetson Module (sadly, the RPI cannot do all the work)
   * Intel Realsense (A very cool RGB-D Camera)
 * Tyres, Robot Arm and other parts are PLA printed (Thanks to my hardware colleagues!) 😊
+* Cleaning devices ( Is there a way to simulate this? please let me know 😉)
 
 > **_NOTE:_** I can't display the real robot since it doesn't belong to me. This is where the 
 <a href="#simulation"> next part</a> shines because it's essentially a perfect replica!!!
