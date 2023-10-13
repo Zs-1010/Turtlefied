@@ -181,5 +181,5 @@ __Future Work__
 * [object detection package - Ar-Ray](https://github.com/Ar-Ray-code/YOLOX-ROS).
 * [README.md template - Othneil Drew](https://github.com/othneildrew/Best-README-Template).
 
-Huge thanks to my employer and my project manager for letting me play and enjoy this "toy", Their generosity keeps my coding gears turning, and I couldn't be more thankful. 😄🚀
+I would like to express my sincere appreciation for the invaluable support and resources that made the project possible, your generosity keeps my coding gears turning, and I couldn't be more thankful for this kind of opportunity and the resources you have provided. 😄🚀
 <p align="right"><a href="#top">(⤴)</a></p>
