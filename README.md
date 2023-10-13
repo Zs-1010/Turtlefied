@@ -5,7 +5,6 @@
 <div align="center">
   <a>
     <img src="assets/gazebo_shot.png" alt="header" width="800" height="450">
-   
   </a>
   <br />
   <h2 align="center">"Turtlefied"</h2>
@@ -13,7 +12,7 @@
     Modified Turtlebot
   </p> -->
 </div>
-![donatello](https://media.giphy.com/media/3og0IOG3Y8Bw5jNKUM/giphy.gif)
+![alt text](https://media.giphy.com/media/3og0IOG3Y8Bw5jNKUM/giphy.gif)
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -39,7 +38,7 @@
 
 <!-- ABOUT  -->
 ## About
-__Turtlefied__ may not be Donatello's famous catchphrase, but it's got its own kind of superhero charm in the tech world. Leveraging a TurtleBot3 Waffle Pi as foundational platform to get me started in the field of robotics.
+__Turtlefied__ may not be Donatello's famous catchphrase, but it's got its own kind of superhero charm in the tech world. Leveraging a TurtleBot3 Waffle Pi as foundational platform to get me started in the field of robotics. 🚀🚀🚀
 
 > **_NOTE:_** This isn't an exhaustive ROS2 tutorial;instead, the focus here is to demonstrate how this platform is capable of perceiving, executing actions and autonomously navigate which is aligned with its intended purpose.
 
@@ -83,7 +82,7 @@ you can also teleoperate turtlefied by executing the command in your terminal, w
 ```
 ros2 run turtlebot3_teleop teleop_keyboard
 ```
-<img src="assets/rviz2_teleop.gif" alt="header" height="300" width="300"><img src="assets/robot_descr.png" alt="header" height="300" width="300"><img src="assets/rviz2_1.gif" alt="header" height="300" width="300">
+<img src="assets/rviz2_teleop.gif" alt="header" height="290" width="290"><img src="assets/robot_descr.png" alt="header" height="290" width="290"><img src="assets/rviz2_1.gif" alt="header" height="290" width="290">
 
 ### Simulation
 Thanks to Robotics community 🤖🤖🤖!!! you can still benefit because you won't have to be concerned about the costs and challenges of building a physical robot. Instead, you can simulate an identical replica in a virtual environment, which is often more budget-friendly and accessible for learning and experimentation.
@@ -145,7 +144,7 @@ A big shout-out to my hardware colleagues for designing this robot arm! Without 
   * driver (because I let arduino talks to rpi via serial)
   * ros2 wrapper (for creating bridge/interface between ros2 and driver)
 
-<img src="assets/arm.png" alt="header" width="250" height="350" /> <img src="assets/arm_1.gif" alt="header" width="500" height="350"/>  
+<img src="assets/arm.png" alt="header" width="300" height="350" /> <img src="assets/arm_1.gif" alt="header" width="500" height="350"/>  
 
 An __object pose estimation__ node is created as well, to visualize where is the object with respect to the camera frame.
 
@@ -160,7 +159,7 @@ An __object pose estimation__ node is created as well, to visualize where is the
 ## Contributing
 Hi there! I am new to this. I just learned that open source creates numerous opportunities and is an excellent place to find inspiration and broaden your knowledge by collaborating with brilliant minds from around the world! therefore, pull request are welcome and accepted.
 
-if you like this project give it a star and feel free to hire me! 😂😂😂 seriously.
+if you like this project give it a star ⭐ and feel free to hire me! 😂😂😂 seriously.
 
 __Future Work__
 * migration to humble
