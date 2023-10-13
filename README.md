@@ -7,7 +7,7 @@
     <img src="assets/gazebo_shot.png" alt="header" width="800" height="450">
   </a>
   <br />
-  <h2 align="center">"Turtlefied"</h2>
+  <h2 align="center">Turtlefied</h2>
   <p align="center">
     (Path to Autonomous Adventure)
   </p>
@@ -47,7 +47,7 @@ __Turtlefied__ may not be Donatello's famous catchphrase, but it's got its own k
     <img src="assets/teleop_sim.gif" alt="header" width="800" height="450">
   </a>
 </div>
-<h1><p align="right"><a href="#top">(⤴)</a></p></h1>
+<p align="right"><a href="#top">(⤴)</a></p>
 
 <!-- HARDWARE -->
 ## Hardware
@@ -69,7 +69,7 @@ Turtlefied consists of:
 
 > **_NOTE:_** I can't display the real robot since it doesn't belong to me. This is where the 
 <a href="#simulation"> next part</a> shines because it's essentially a perfect replica!!!
-<h1><p align="right"><a href="#top">(⤴)</a></p></h1>
+<p align="right"><a href="#top">(⤴)</a></p>
 
 <!-- SOFTWARE -->
 ## Software
@@ -82,7 +82,7 @@ you can also teleoperate turtlefied by executing the command in your terminal, w
 ```
 ros2 run turtlebot3_teleop teleop_keyboard
 ```
-<img src="assets/rviz2_teleop.gif" alt="header" height="280" width="280"><img src="assets/robot_descr.png" alt="header" height="280" width="280"><img src="assets/rviz2_1.gif" alt="header" height="280" width="280">
+<img src="assets/rviz2_teleop.gif" alt="header" height="250" width="250"><img src="assets/robot_descr.png" alt="header" height="250" width="250"><img src="assets/rviz2_1.gif" alt="header" height="250" width="250">
 
 ### Simulation
 Thanks to Robotics community 🤖🤖🤖!!! you can still benefit because you won't have to be concerned about the costs and challenges of building a physical robot. Instead, you can simulate an identical replica in a virtual environment, which is often more budget-friendly and accessible for learning and experimentation.
@@ -153,7 +153,7 @@ An __object pose estimation__ node is created as well, to visualize where is the
     <img src="assets/object_pose_estimate.png" alt="header" width="400"/>
   </a>
 </div>
-<h1><p align="right"><a href="#top">(⤴)</a></p></h1>
+<p align="right"><a href="#top">(⤴)</a></p>
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -167,7 +167,7 @@ __Future Work__
 * add android UI
 * moveit2 is really interesting, I want to use its path planning for the arm
 * get rid of frontier search exploration, because the goal is only to disinfect objects in search while mapping
-<h1><p align="right"><a href="#top">(⤴)</a></p></h1>
+<p align="right"><a href="#top">(⤴)</a></p>
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
@@ -182,4 +182,4 @@ __Future Work__
 * [README.md template - Othneil Drew](https://github.com/othneildrew/Best-README-Template).
 
 Huge thanks to my employer and my project manager for letting me play and enjoy this "toy", Their generosity keeps my coding gears turning, and I couldn't be more thankful. 😄🚀
-<h1><p align="right"><a href="#top">(⤴)</a></p></h1>
+<p align="right"><a href="#top">(⤴)</a></p>
