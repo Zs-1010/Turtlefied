@@ -12,7 +12,7 @@
     (Path to Autonomous Adventure)
   </p>
 </div>
-![](https://media.giphy.com/media/3og0IOG3Y8Bw5jNKUM/giphy.gif).
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -82,7 +82,7 @@ you can also teleoperate turtlefied by executing the command in your terminal, w
 ```
 ros2 run turtlebot3_teleop teleop_keyboard
 ```
-<img src="assets/rviz2_teleop.gif" alt="header" height="250" width="250"><img src="assets/robot_descr.png" alt="header" height="250" width="250"><img src="assets/rviz2_1.gif" alt="header" height="250" width="250">
+<img src="assets/rviz2_teleop.gif" alt="header" height="260" width="260"><img src="assets/robot_descr.png" alt="header" height="260" width="260"><img src="assets/rviz2_1.gif" alt="header" height="260" width="260">
 
 ### Simulation
 Thanks to Robotics community 🤖🤖🤖!!! you can still benefit because you won't have to be concerned about the costs and challenges of building a physical robot. Instead, you can simulate an identical replica in a virtual environment, which is often more budget-friendly and accessible for learning and experimentation.
