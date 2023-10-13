@@ -47,7 +47,6 @@ __Turtlefied__ may not be Donatello's famous catchphrase, but it's got its own k
     <img src="assets/teleop_sim.gif" alt="header" width="800" height="450">
   </a>
 </div>
-
 <h1><p align="right"><a href="#top">⤴</a></p></h1>
 
 <!-- HARDWARE -->
@@ -70,9 +69,7 @@ Turtlefied consists of:
 
 > **_NOTE:_** I can't display the real robot since it doesn't belong to me. This is where the 
 <a href="#simulation"> next part</a> shines because it's essentially a perfect replica!!!
-
 <h1><p align="right"><a href="#top">⤴</a></p></h1>
-
 <!-- SOFTWARE -->
 ## Software
 Turtlefied runs ROS2 Galactic version on Ubuntu 20.04. All the packages within this repository have been developed, hence, any changes I made to the specific packages<a href="#acknowledgments"> (see acknowledgements section)</a> are excluded.
@@ -84,7 +81,9 @@ you can also teleoperate turtlefied by executing the command in your terminal, w
 ```
 ros2 run turtlebot3_teleop teleop_keyboard
 ```
-<img src="assets/rviz2_teleop.gif" alt="header" height="400">  <img src="assets/robot_descr.png" alt="header" height="400"> <img src="assets/rviz2_1.gif" alt="header" height="400" width="400">
+<img src="assets/rviz2_teleop.gif" alt="header" height="300" width="300"> 
+<img src="assets/robot_descr.png" alt="header" height="300" width="300">
+<img src="assets/rviz2_1.gif" alt="header" height="300" width="300">
 
 ### Simulation
 Thanks to Robotics community 🤖🤖🤖!!! you can still benefit because you won't have to be concerned about the costs and challenges of building a physical robot. Instead, you can simulate an identical replica in a virtual environment, which is often more budget-friendly and accessible for learning and experimentation.
@@ -105,13 +104,11 @@ Here are the necessary installations to recreate the setup.
 
 ### Usage
 
-    ```sh
     # bringup all the required nodes
     ros2 launch turtlefied_pkg bringup.launch.py
 
     # the node that handles task execution using a behavior-tree 
     ros2 run turtlefied_pkg bt_decision
-    ```
 
 __Let's visualize with Behavior Trees__
 
@@ -137,7 +134,7 @@ __Let's visualize SLAM and Navigation__
 
 Essentially, __Localization__, __Mapping__ and __Navigation__ are the core of robotics that enables it to understand its environment, determine its estimate location within the environment, and autonomously navigate through it. These capabilities are fundamental for tasks such as path planning, obstacle avoidance, exploration, and interaction with the surroundings.
 
-<img src="assets/slam.gif" alt="header" width="600" height="400"> <img src="assets/slam_2.gif" alt="header" width="600" height="400">
+<img src="assets/slam.gif" alt="header" width="500" height="300"> <img src="assets/slam_2.gif" alt="header" width="500" height="300">
 
 __Let's visualize the Robot Arm__
 
@@ -148,15 +145,11 @@ A big shout-out to my hardware colleagues for designing this robot arm! Without 
   * driver (because I let arduino talks to rpi via serial)
   * ros2 wrapper (for creating bridge/interface between ros2 and driver)
 
-<img src="assets/arm.png" alt="header" width="350" height="400" /> <img src="assets/arm_1.gif" alt="header" width="600" height="400"/>  
+<img src="assets/arm.png" alt="header" width="250" height="300" /> <img src="assets/arm_1.gif" alt="header" width="500" height="300"/>  
 
 you can also see that I made an __object pose estimation__ node which shows where is the object with respect to the camera frame.
-
 <img src="assets/object_pose_estimate.png" alt="header" width="400"/>
-
 <h1><p align="right"><a href="#top">⤴</a></p></h1>
-
-
 <!-- CONTRIBUTING -->
 ## Contributing
 Hi there! I am new to this. I just learned that open source creates numerous opportunities and is an excellent place to find inspiration and broaden your knowledge by collaborating with brilliant minds from around the world! therefore, pull request are welcome and accepted.
@@ -169,9 +162,7 @@ __Future Work__
 * add android UI
 * moveit2 is really interesting, I want to use its path planning for the arm
 * get rid of frontier search exploration, because the goal is only to disinfect objects in search while mapping
-
 <h1><p align="right"><a href="#top">⤴</a></p></h1>
-
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
@@ -185,5 +176,4 @@ __Future Work__
 * [README.md template - Othneil Drew](https://github.com/othneildrew/Best-README-Template).
 
 Huge thanks to my employer and my project manager for letting me play and enjoy this "toy", Their generosity keeps my coding gears turning, and I couldn't be more thankful. 😄🚀
-
 <h1><p align="right"><a href="#top">⤴</a></p></h1>
