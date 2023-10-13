@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a>
-    <img src="assets/main.gif" alt="header" width="100%">
+    <img src="assets/main.gif" alt="header" width="100%" height="500">
   </a>
   <br />
   <h2 align="center">Turtlefied</h2>
@@ -44,7 +44,7 @@ __Turtlefied__ may not be Donatello's famous catchphrase, but it's got its own k
 
 <div align="center">
   <a>
-    <img src="assets/teleop_sim.gif" alt="header" width="100%">
+    <img src="assets/teleop_sim.gif" alt="header" width="100%" height="500">
   </a>
 </div>
 <p align="right"><a href="#top">(⤴)</a></p>
