@@ -1,0 +1,156 @@
+<?xml version="1.0"?>
+<root main_tree_to_execute="MainTree">
+    <!-- ////////// -->
+    <BehaviorTree ID="CreateBasicMap">
+        <Sequence>
+            <ReactiveFallback>
+                <Condition ID="IsMapTargetReached" map_target="0.85"/>
+                <ReactiveFallback>
+                    <Sequence>
+                        <Condition ID="IsDistanceReached" distance_to_reach="1.0"/>
+                        <Action ID="RobotPause"/>
+                        <Condition ID="IsPoseAlreadyExist" coverage="1.0" timeout="30000"/>
+                        <Action ID="DisinfectSwitch" name="SPRAY" pin_nbr="23" timer_s="5"/>
+                        <Action ID="DisinfectSwitch" name="UVC"  pin_nbr="24" timer_s="5"/>
+                    </Sequence>
+                    <ReactiveSequence>
+                        <Action ID="RobotResume"/>
+                        <Action ID="FindClosestFrontier"/>
+                    </ReactiveSequence>
+                </ReactiveFallback>
+            </ReactiveFallback>
+            <Action ID="RobotResume"/>
+            <Condition ID="IsMapTargetReached" map_target="0.85"/>
+            <Action ID="SaveMap" set_map_dir="{mapname}"/>
+            <Action ID="ReturnToOrig" origin_pose="-1;1;0"/>
+            <Condition ID="IsReturnToOrigin"/>
+        </Sequence>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <BehaviorTree ID="FindObjects">
+        <Sequence>
+            <Action ID="RobotResume"/>
+            <Action ID="GoSomewhere"/>
+            <Action ID="RobotPause"/>
+            <RetryUntilSuccessful num_attempts="4">
+                <Sequence>
+                    <ReactiveFallback>
+                        <Action ID="SearchObject"/>
+                        <Action ID="Ikot" direction="counterclockwise"/>
+                    </ReactiveFallback>
+                    <Action ID="SearchObject"/>
+                </Sequence>
+            </RetryUntilSuccessful>
+        </Sequence>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <BehaviorTree ID="MainTree">
+        <Sequence>
+            <Fallback>
+                <Condition ID="IsMapAlreadySaved"/>
+                <SubTree ID="CreateBasicMap"/>
+            </Fallback>
+            <SubTree ID="FindObjects"/>
+            <SubTree ID="NavigateToDisinfect"/>
+        </Sequence>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <BehaviorTree ID="NavigateToDisinfect">
+        <Sequence>
+            <Action ID="ComputeObjectPose"/>
+            <Action ID="ChangeState" state="reset"/>
+            <Action ID="ChangeNavBT" bt_name="follow_point"/>
+            <Action ID="ChangeState" state="start"/>
+            <Fallback>
+                <Action ID="GoToObject"/>
+                <Sequence>
+                    <Action ID="ChangeState" state="reset"/>
+                    <Action ID="ChangeNavBT" bt_name="mod_bt"/>
+                    <Action ID="ChangeState" state="start"/>
+                    <Action ID="RobotPause"/>
+                    <AlwaysFailure/>
+                </Sequence>
+            </Fallback>
+            <SubTree ID="Targeted"/>
+            <Action ID="ChangeState" state="reset"/>
+            <Action ID="ChangeNavBT" bt_name="mod_bt"/>
+            <Action ID="ChangeState" state="start"/>
+            <Action ID="RobotPause"/>
+        </Sequence>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <BehaviorTree ID="Targeted">
+        <Sequence>
+            <Action ID="RobotArm" action="enable"/>
+            <Action ID="DisinfectSwitch" name="SPRAY" pin_nbr="25" timer_s="10"/>
+            <Action ID="DisinfectSwitch" name="UVC"  pin_nbr="26" timer_s="10"/>
+            <Action ID="RobotArm" action="disable"/>
+        </Sequence>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <BehaviorTree ID="Transition">
+        <Sequence>
+            <Action ID="ChangeState" state="reset"/>
+            <Action ID="KillNode" name="shutdown nodes to transition" node_name="slam_toolbox"/>
+            <Action ID="KillNode" name="shutdown nodes to transition" node_name="explore_node"/>
+            <Action ID="ChangeMap" get_map_dir="{mapname}"/>
+            <Action ID="ChangeState" state="start"/>
+        </Sequence>
+    </BehaviorTree>
+    <!-- ////////// -->
+    <TreeNodesModel>
+        <SubTree ID="CreateBasicMap"/>
+        <SubTree ID="FindObjects"/>
+        <SubTree ID="Targeted"/>
+        <SubTree ID="NavigateToDisinfect"/>
+
+        <Action ID="ChangeMap">
+            <inout_port name="get_map_dir">Gets the map yaml file</inout_port>
+        </Action>
+        <Action ID="ChangeState">
+            <input_port name="state">Transition state of the lifecycle node</input_port>
+        </Action>
+        <Action ID="ComputeObjectPose"/>
+        <Action ID="DisinfectSwitch">
+            <input_port name="pin_nbr">GPIO pin used</input_port>
+            <input_port name="timer_s">set timer(in sec) for disinfection</input_port>
+        </Action>
+        <Action ID="FindClosestFrontier"/>
+        <Action ID="GoSomewhere"/>
+        <Action ID="GoToObject"/>
+        <Action ID="Ikot">
+            <input_port name="direction">clockwise/clounterclockwise</input_port>
+        </Action>
+        <Condition ID="IsDistanceReached">
+            <input_port name="distance_to_reach">distance tolerance in meter(s)</input_port>
+        </Condition>
+        <Condition ID="IsMapAlreadySaved"/>
+        <Condition ID="IsMapTargetReached">
+            <input_port name="map_target">target map completion[set 0.85 for 85%]</input_port>
+        </Condition>
+        <Condition ID="IsPoseAlreadyExist">
+            <input_port name="coverage">spray can cover in meter(s) to prevent redundancy</input_port>
+            <input_port name="timeout">timeout when it is not responding</input_port>
+        </Condition>
+        <Condition ID="IsReturnToOrigin"/>
+        <Action ID="KillNode">
+            <input_port name="node_name">name of the ros2 node to shutdown</input_port>
+        </Action>
+        <Action ID="ChangeNavBT">
+            <input_port name="bt_name">to change nav stack behavior tree</input_port>
+        </Action>
+        <Action ID="ReturnToOrig">
+            <input_port name="origin_pose">set the origin pose</input_port>
+        </Action>
+        <Action ID="RobotArm">
+            <input_port name="action">enable/disable</input_port>
+        </Action>
+        <Action ID="RobotPause"/>
+        <Action ID="RobotResume"/>
+        <Action ID="SaveMap">
+            <inout_port name="set_map_dir">Saves the map yaml file</inout_port>
+        </Action>
+        <Action ID="SearchObject"/>
+    </TreeNodesModel>
+    <!-- ////////// -->
+</root>

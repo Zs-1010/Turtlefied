@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="turtlefied::arm">
+    <group name="arm_planning_group">
+        <joint name="arm_joint_1"/>
+        <joint name="arm_joint_2"/>
+        <joint name="arm_joint_3"/>
+        <joint name="arm_joint_4"/>
+    </group>
+    <group_state name="home" group="arm_planning_group">
+        <joint name="arm_joint_1" value="0"/>
+        <joint name="arm_joint_2" value="0.6091"/>
+        <joint name="arm_joint_3" value="2.4918"/>
+        <joint name="arm_joint_4" value="1.467"/>
+    </group_state>
+    <virtual_joint name="virtual_joint" type="fixed" parent_frame="base_link" child_link="arm_link"/>
+    <disable_collisions link1="arm_link" link2="arm_link_1" reason="Adjacent"/>
+    <disable_collisions link1="arm_link" link2="arm_link_2" reason="Never"/>
+    <disable_collisions link1="arm_link_1" link2="arm_link_2" reason="Adjacent"/>
+    <disable_collisions link1="arm_link_2" link2="arm_link_3" reason="Adjacent"/>
+</robot>

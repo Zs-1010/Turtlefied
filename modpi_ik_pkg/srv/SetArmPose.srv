@@ -1,0 +1,4 @@
+# Request for setting a named target
+string target_name
+---
+bool isreturnsuccess
