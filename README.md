@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a>
-    <img src="assets/gazebo_shot.png" alt="header" width="800" height="450">
+    <img src="assets/main.gif" alt="header" width="800" height="450">
   </a>
   <br />
   <h2 align="center">Turtlefied</h2>
