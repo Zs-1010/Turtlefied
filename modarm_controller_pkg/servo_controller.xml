@@ -1,0 +1,9 @@
+<library path="modarm_controller_pkg">
+    <class name="servo_controller/ServoInterface"
+            type="servo_controller::ServoInterface"
+            base_class_type="hardware_interface::SystemInterface">
+      <description>
+        A 4-DOF Robot-Arm MG996R Hardware Interface
+      </description>
+    </class>
+</library>
