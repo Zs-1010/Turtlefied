@@ -82,7 +82,7 @@ you can also teleoperate turtlefied by executing the command in your terminal, w
 ```
 ros2 run turtlebot3_teleop teleop_keyboard
 ```
-<img src="assets/rviz2_teleop.gif" alt="header" height="270" width="270"><img src="assets/robot_descr.png" alt="header" height="270" width="270"><img src="assets/rviz2_1.gif" alt="header" height="270" width="270">
+<img src="assets/rviz2_teleop.gif" alt="header" height="270" width="270"> <img src="assets/robot_descr.png" alt="header" height="270" width="270"> <img src="assets/rviz2_1.gif" alt="header" height="270" width="270">
 
 ### Simulation
 Thanks to Robotics community 🤖🤖🤖!!! you can still benefit because you won't have to be concerned about the costs and challenges of building a physical robot. Instead, you can simulate an identical replica in a virtual environment, which is often more budget-friendly and accessible for learning and experimentation.
